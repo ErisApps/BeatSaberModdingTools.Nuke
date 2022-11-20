@@ -5,6 +5,7 @@ using Nuke.Common.CI.GitHubActions;
 	"pr",
 	GitHubActionsImage.UbuntuLatest,
 	AutoGenerate = true,
+	FetchDepth = 0, // Only a single commit is fetched by default, for the ref/SHA that triggered the workflow. Make sure to fetch whole git history, in order to get GitVersion to work.
 	OnPullRequestBranches = new [] { "main" },
 	OnPullRequestIncludePaths = new[] { "**/*" },
 	OnPullRequestExcludePaths = new[] { ".editorconfig", ".gitignore", "README.MD" },
@@ -17,6 +18,7 @@ using Nuke.Common.CI.GitHubActions;
 	"publish",
 	GitHubActionsImage.UbuntuLatest,
 	AutoGenerate = true,
+	FetchDepth = 0, // Only a single commit is fetched by default, for the ref/SHA that triggered the workflow. Make sure to fetch whole git history, in order to get GitVersion to work.
 	OnPushBranches = new [] { "main" },
 	OnPushTags = new[] { "*.*.*" },
 	OnPushIncludePaths = new[] { "**/*" },
