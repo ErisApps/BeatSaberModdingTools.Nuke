@@ -3,7 +3,9 @@ using Nuke.Common.CI.GitHubActions;
 
 [GitHubActions(
 	"pr",
+	GitHubActionsImage.MacOsLatest,
 	GitHubActionsImage.UbuntuLatest,
+	GitHubActionsImage.WindowsLatest,
 	AutoGenerate = true,
 	OnPullRequestBranches = new [] { "main" },
 	OnPullRequestIncludePaths = new[] { "**/*" },
@@ -15,7 +17,9 @@ using Nuke.Common.CI.GitHubActions;
 ]
 [GitHubActions(
 	"publish",
+	GitHubActionsImage.MacOsLatest,
 	GitHubActionsImage.UbuntuLatest,
+	GitHubActionsImage.WindowsLatest,
 	AutoGenerate = true,
 	OnPushBranches = new [] { "main" },
 	OnPushTags = new[] { "*.*.*" },
