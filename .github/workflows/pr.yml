@@ -32,6 +32,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Run './build.cmd Compile Pack'
         run: ./build.cmd Compile Pack
         env:
