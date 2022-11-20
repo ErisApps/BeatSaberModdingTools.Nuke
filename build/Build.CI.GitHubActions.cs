@@ -11,7 +11,7 @@ using Nuke.Common.CI.GitHubActions;
 	EnableGitHubToken = true,
 	PublishArtifacts = false,
 	InvokedTargets = new[] { nameof(Compile), nameof(Pack) },
-	CacheKeyFiles = new[] { "src/**/*.csproj" })
+	CacheKeyFiles = new string[0])
 ]
 [GitHubActions(
 	"publish",
@@ -24,7 +24,7 @@ using Nuke.Common.CI.GitHubActions;
 	EnableGitHubToken = true,
 	PublishArtifacts = false,
 	InvokedTargets = new[] { nameof(Compile),  nameof(Pack), nameof(PushToGithubPackagesRegistry) },
-	CacheKeyFiles = new[] { "src/**/*.csproj" })
+	CacheKeyFiles = new string[0])
 ]
 partial class Build
 {
