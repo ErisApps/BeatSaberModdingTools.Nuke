@@ -47,13 +47,13 @@ partial class Build : NukeBuild
 	Target Restore => _ => _
 		.Executes(() =>
 		{
-			/*if (GitHubActions != null)
+			if (GitHubActions != null)
 			{
 				NuGetSourcesUpdate(s => s
 					.SetName("Atlas-Rhythm GH Packages")
 					.SetUserName(GitHubActions.RepositoryOwner)
 					.SetPassword(GitHubActions.Token));
-			}*/
+			}
 
 			DotNetRestore(s => s
 				.SetProjectFile(Solution));
