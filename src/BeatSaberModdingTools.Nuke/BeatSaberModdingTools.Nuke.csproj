@@ -6,6 +6,16 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+	<PropertyGroup>
+		<Authors>Eris</Authors>
+		<PackageDescription>
+			A practical set of Nuke.build targets that can be used during both local development as well in CI/CD pipelines.
+		</PackageDescription>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/ErisApps/BeatSaberModdingTools.Nuke</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+	</PropertyGroup>
+
     <ItemGroup>
         <PackageReference Include="Hive.Versioning.Standalone" Version="0.1.0-gh901.1" />
         <PackageReference Include="Nuke.Common" Version="6.2.1" />
