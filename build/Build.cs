@@ -77,6 +77,7 @@ partial class Build : NukeBuild
 
 	Target Pack => _ => _
 		.DependsOn(Clean, Compile)
+		.Produces(ArtifactsDirectory / "*.nupkg")
 		.Executes(() =>
 		{
 			DotNetPack(s => s
