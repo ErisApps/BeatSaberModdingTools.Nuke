@@ -69,6 +69,8 @@ partial class Build : NukeBuild
 				.SetProjectFile(Solution)
 				.SetConfiguration(Configuration)
 				.SetDeterministic(IsServerBuild)
+				.SetProperty("RepositoryBranch", GitRepository.Branch)
+				.SetProperty("RepositoryCommit", GitRepository.Commit)
 				.SetContinuousIntegrationBuild(IsServerBuild)
 				.SetAssemblyVersion(GitVersion.AssemblySemVer)
 				.SetFileVersion(GitVersion.AssemblySemFileVer)
@@ -83,10 +85,9 @@ partial class Build : NukeBuild
 				.EnableNoRestore()
 				.EnableNoBuild()
 				.SetProject(Solution.BeatSaberModdingTools_Nuke)
-				.SetProperty("RepositoryBranch", GitRepository.Branch)
-				.SetProperty("RepositoryCommit", GitRepository.Commit)
 				.SetConfiguration(Configuration)
-				.SetOutputDirectory(ArtifactsDirectory));
+				.SetOutputDirectory(ArtifactsDirectory)
+				.SetVersion(GitVersion.NuGetVersion));
 		});
 
 	Target PushToGithubPackagesRegistry => _ => _
