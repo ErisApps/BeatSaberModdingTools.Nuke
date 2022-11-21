@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Helpers;
 using Nuke.Common;
 using Nuke.Common.CI;
 using Nuke.Common.Git;
@@ -8,11 +9,10 @@ using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.GitHub;
 using Nuke.Common.Tools.GitVersion;
-using Nuke.Common.Tools.NuGet;
 using Nuke.Common.Utilities.Collections;
+using static Helpers.DotNetNugetUpdateSourceTask;
 using static Nuke.Common.IO.FileSystemTasks;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
-using static Nuke.Common.Tools.NuGet.NuGetTasks;
 
 [ShutdownDotNetAfterServerBuild]
 partial class Build : NukeBuild
@@ -49,9 +49,9 @@ partial class Build : NukeBuild
 		{
 			if (GitHubActions != null)
 			{
-				NuGetSourcesUpdate(s => s
+				DotNetNuGetUpdateSource(s => s
 					.SetName("Atlas-Rhythm GH Packages")
-					.SetUserName(GitHubActions.RepositoryOwner.ToLowerInvariant())
+					.SetUsername(GitHubActions.RepositoryOwner.ToLowerInvariant())
 					.SetPassword(GitHubActions.Token)
 					.EnableStorePasswordInClearText());
 			}
