@@ -75,6 +75,7 @@ public static class DotNetNugetUpdateSourceTask
 		return configurator.Invoke(DotNetNuGetUpdateSource, DotNetTasks.DotNetLogger, degreeOfParallelism, completeOnFailure);
 	}
 
+	[Serializable]
 	public partial class DotNetNuGetUpdateSourceSettings : ToolSettings
 	{
 		/// <summary>
