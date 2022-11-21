@@ -34,7 +34,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Run './build.cmd Compile Pack'
-        run: ./build.cmd Compile Pack
+      - name: Run './build.cmd Compile'
+        run: ./build.cmd Compile
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
