@@ -13,6 +13,7 @@
 			A practical set of Nuke.build targets that can be used during both local development as well in CI/CD pipelines.
 		</PackageDescription>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/ErisApps/BeatSaberModdingTools.Nuke</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/ErisApps/BeatSaberModdingTools.Nuke</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 	</PropertyGroup>
