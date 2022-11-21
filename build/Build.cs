@@ -51,7 +51,7 @@ partial class Build : NukeBuild
 			{
 				DotNetNuGetUpdateSource(s => s
 					.SetName("Atlas-Rhythm GH Packages")
-					.SetUsername(GitHubActions.RepositoryOwner.ToLowerInvariant())
+					.SetUsername(GitHubActions.RepositoryOwner)
 					.SetPassword(GitHubActions.Token)
 					.EnableStorePasswordInClearText());
 			}
