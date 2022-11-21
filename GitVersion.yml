@@ -1,6 +1,6 @@
-mode: ContinuousDeployment
+mode: ContinuousDelivery
 
-assembly-versioning-scheme: MajorMinor
+assembly-versioning-scheme: MajorMinorPatch
 assembly-file-versioning-scheme: MajorMinorPatch
 
 branches:
