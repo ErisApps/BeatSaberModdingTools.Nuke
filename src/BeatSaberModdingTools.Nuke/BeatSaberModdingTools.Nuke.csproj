@@ -7,6 +7,7 @@
     </PropertyGroup>
 
 	<PropertyGroup>
+		<Title>BeatSaberModdingTools.Nuke</Title>
 		<Authors>Eris</Authors>
 		<PackageDescription>
 			A practical set of Nuke.build targets that can be used during both local development as well in CI/CD pipelines.
