@@ -11,7 +11,7 @@ using Nuke.Common.CI.GitHubActions;
 	OnPullRequestExcludePaths = new[] { ".editorconfig", ".gitignore", "README.MD" },
 	EnableGitHubToken = true,
 	PublishArtifacts = false,
-	InvokedTargets = new[] { nameof(Compile), nameof(Pack) },
+	InvokedTargets = new[] { nameof(Compile) },
 	CacheKeyFiles = new string[0])
 ]
 [GitHubActions(
