@@ -94,6 +94,9 @@ partial class Build : NukeBuild
 
 	Target PushToGithubPackagesRegistry => _ => _
 		.DependsOn(Pack)
+		.OnlyWhenDynamic(() => GitHubActions != null &&
+		                       GitHubActions.EventName == "push" &&
+		                       GitHubActions.Ref != null && GitHubActions.Ref.Contains("/refs/tags/"))
 		.Executes(() =>
 		{
 			IEnumerable<AbsolutePath> artifactPackages = ArtifactsDirectory.GlobFiles("*.nupkg");
