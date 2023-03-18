@@ -19,7 +19,7 @@
 	</PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Hive.Versioning.Standalone" Version="0.1.0-gh901.1" />
+        <PackageReference Include="Hive.Versioning.Standalone" Version="0.1.0-gh918.1" />
         <PackageReference Include="Nuke.Common" Version="6.2.1" />
     </ItemGroup>
 
