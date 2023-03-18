@@ -25,13 +25,21 @@ on:
       - '!.editorconfig'
       - '!.gitignore'
       - '!README.MD'
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*'
+      - '!.editorconfig'
+      - '!.gitignore'
+      - '!README.MD'
 
 jobs:
   ubuntu-latest:
     name: ubuntu-latest
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Run './build.cmd Compile'
