@@ -70,6 +70,7 @@ partial class Build : NukeBuild
 				.SetConfiguration(Configuration)
 				.SetDeterministic(IsServerBuild)
 				.SetContinuousIntegrationBuild(IsServerBuild)
+				.SetVersion(GitVersion.SemVer)
 				.SetAssemblyVersion(GitVersion.AssemblySemVer)
 				.SetFileVersion(GitVersion.AssemblySemFileVer)
 				.SetInformationalVersion(GitVersion.InformationalVersion));
