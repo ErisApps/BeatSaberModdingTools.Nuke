@@ -3,8 +3,8 @@ using static Nuke.Common.IO.FileSystemTasks;
 
 namespace BeatSaberModdingTools.Nuke.Components;
 
-public interface IClean : IProvideRefsDirectory
+public interface ICleanRefs : IProvideRefsDirectory
 {
-	Target Clean => _ => _
+	Target CleanRefs => _ => _
 		.Executes(() => EnsureCleanDirectory(RefsDirectory));
 }

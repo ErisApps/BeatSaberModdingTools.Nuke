@@ -15,8 +15,8 @@ public interface IDeserializeManifest : IProvideSourceDirectory
 	AbsolutePath ManifestPath => TryGetValue(() => ManifestPath) ?? SourceDirectory / "manifest.json";
 
 	Target DeserializeManifest => _ => _
-		.TryAfter<IClean>()
-		.Requires(() => !string.IsNullOrWhiteSpace(ManifestPath)).Executes((Func<Task>)(async () =>
+		.Requires(() => !string.IsNullOrWhiteSpace(ManifestPath))
+		.Executes((Func<Task>)(async () =>
 		{
 			Assert.FileExists(ManifestPath);
 
