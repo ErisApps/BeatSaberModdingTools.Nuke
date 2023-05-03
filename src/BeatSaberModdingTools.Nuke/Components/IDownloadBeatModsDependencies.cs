@@ -20,7 +20,7 @@ public interface IDownloadBeatModsDependencies : IProvideRefsDirectory
 	private static Dictionary<string, VersionRange> Dependencies => IDeserializeManifest.Manifest!.Dependencies;
 
 	Target DownloadDependencies => _ => _
-		.TryAfter<IClean>()
+		.TryAfter<ICleanRefs>()
 		.DependsOn<IDeserializeManifest>(x => x.DeserializeManifest)
 		.OnlyWhenDynamic(() => Dependencies.Count > 0).Executes((Func<Task>)(async () =>
 		{
